@@ -24,3 +24,17 @@
         </article>
     {{ end }}
 {{ end }}
+
+
+{{ if ne .Site.Params.issoClientUrl "" }}
+    <!-- Isso Comments -->
+    <div id="isso_thread_div">
+    <script
+        {{ if ne .Site.Params.issoApiUrl "" }} data-isso={{.Site.Params.issoApiUrl}} {{ end }}
+        src={{.Site.Params.issoClientUrl}}
+        data-isso-require-email={{.Site.Params.issoRequireEmail}} >
+    </script>
+    <section id="isso-thread"></section>
+    <noscript>Please enable JavaScript to view the <a href="http://posativ.org/isso/">comments powered by Isso.</a></noscript>
+    </div>
+{{ end }}
